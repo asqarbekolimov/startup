@@ -41,7 +41,7 @@ const Sidebar = ({ toggle }: SidebarProps): JSX.Element => {
             {item.links.map((nav) => {
               const active = router.asPath == nav.route;
               return (
-                <Link href={`/${nav.route}`}>
+                <Link href={`${nav.route}`}>
                   <Button
                     colorScheme={"facebook"}
                     variant={active ? "solid" : "ghost"}
