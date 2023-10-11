@@ -33,7 +33,7 @@ const Header = ({ onToggle }: HeaderProps) => {
       top={0}
       left={0}
       right={0}
-      bg={useColorModeValue("white.50", "gray.800")}
+      bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
       borderBottomColor={useColorModeValue("gray.200", "gray.700")}
     >

@@ -3,6 +3,7 @@ import "@fontsource/roboto";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import { theme } from "@/config/theme";
+import "react-multi-carousel/lib/styles.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

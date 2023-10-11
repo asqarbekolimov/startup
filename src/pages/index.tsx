@@ -1,8 +1,9 @@
 import { withLayout } from "@/layouts/layout";
+import { HomePageComponents } from "@/page-component";
 import React from "react";
 
 const Home = () => {
-  return <div>Home</div>;
+  return <HomePageComponents />;
 };
 
 export default withLayout(Home);
