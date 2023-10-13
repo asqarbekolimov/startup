@@ -15,11 +15,15 @@ import {
   AnnouncementIcons,
   CodingIcons,
   DesignIcons,
+  EngIcons,
   LaptopIcons,
   PersonIcons,
   PrintIcons,
+  UzbIcons,
 } from "src/icons";
 import { SiAmd, SiCisco, SiLogitech, SiSpotify } from "react-icons/si";
+import RusIcon from "@/icons/rus";
+import TurkIcon from "@/icons/turk";
 
 export const navigation = [
   {
@@ -114,4 +118,11 @@ export const trustedCompeny = [
   FaApplePay,
   SiLogitech,
   SiSpotify,
+];
+
+export const language = [
+  { nativeLng: "English", lng: "en", icon: EngIcons },
+  { nativeLng: "Uzbek", lng: "uz", icon: UzbIcons },
+  { nativeLng: "Türkçe", lng: "tr", icon: TurkIcon },
+  { nativeLng: "Русский", lng: "ru", icon: RusIcon },
 ];
