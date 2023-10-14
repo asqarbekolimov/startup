@@ -20,8 +20,8 @@ const HowItWorks = () => {
     <div>
       <SectionTitle
         textAlign={"center"}
-        title="How it works?"
-        subtitle="10,000+ unique online course list designs"
+        title={t("how_it_works_title", { ns: "home" })}
+        subtitle={t("how_it_works_description", { ns: "home" })}
       />
       <SimpleGrid mt={10} columns={5} spacing={10} alignItems={"center"}>
         {howItWorks.map((item, idx) => {
