@@ -21,13 +21,16 @@ import Link from "next/link";
 import { HeaderProps } from "./header.props";
 import { language } from "@/config/constants";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/router";
 
 const Header = ({ onToggle }: HeaderProps) => {
   const { toggleColorMode, colorMode } = useColorMode();
   const { t, i18n } = useTranslation();
+  const router = useRouter();
 
   const onLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
+    router.replace(router.asPath);
   };
 
   return (
