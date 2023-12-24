@@ -7,3 +7,4 @@ export { default as PopularCources } from "./popular-cources/popular-cources";
 export { default as Sponsorship } from "./sponsorship/sponsorship";
 export { default as Testimonials } from "./testimonials/testimonials";
 export { default as AllCoursesCard } from "./all-courses-card/all-courses-card";
+export { default as Pricing } from "./pricing/pricing";
