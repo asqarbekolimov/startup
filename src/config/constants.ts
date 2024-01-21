@@ -310,32 +310,54 @@ export const booksCategory = [
 ];
 
 export const faq = [
-	{
-		question: 'faq_question_1',
-		answer: 'faq_answer_1',
-	},
-	{
-		question: 'faq_question_2',
-		answer: 'faq_answer_2',
-	},
-	{
-		question: 'faq_question_3',
-		answer: 'faq_answer_3',
-	},
-	{
-		question: 'faq_question_4',
-		answer: 'faq_answer_4',
-	},
-	{
-		question: 'faq_question_5',
-		answer: 'faq_answer_5',
-	},
-	{
-		question: 'faq_question_6',
-		answer: 'faq_answer_6',
-	},
-	{
-		question: 'faq_question_7',
-		answer: 'faq_answer_7',
-	},
+  {
+    question: "faq_question_1",
+    answer: "faq_answer_1",
+  },
+  {
+    question: "faq_question_2",
+    answer: "faq_answer_2",
+  },
+  {
+    question: "faq_question_3",
+    answer: "faq_answer_3",
+  },
+  {
+    question: "faq_question_4",
+    answer: "faq_answer_4",
+  },
+  {
+    question: "faq_question_5",
+    answer: "faq_answer_5",
+  },
+  {
+    question: "faq_question_6",
+    answer: "faq_answer_6",
+  },
+  {
+    question: "faq_question_7",
+    answer: "faq_answer_7",
+  },
+];
+export const avatars = [
+  {
+    name: "Ryan Florence",
+    url: "https://bit.ly/ryan-florence",
+  },
+  {
+    name: "Segun Adebayo",
+    url: "https://bit.ly/sage-adebayo",
+  },
+  {
+    name: "Kent Dodds",
+    url: "https://bit.ly/kent-c-dodds",
+  },
+  {
+    name: "Prosper Otemuyiwa",
+    url: "https://bit.ly/prosper-baba",
+  },
+  {
+    name: "Christian Nwamba",
+    url: "https://bit.ly/code-beast",
+  },
 ];
