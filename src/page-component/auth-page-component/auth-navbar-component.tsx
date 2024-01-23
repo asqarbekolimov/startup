@@ -20,15 +20,7 @@ const AuthNavbarComponent = () => {
   const linkHover = useColorModeValue("black", "white");
 
   return (
-    <Box
-      w={"full"}
-      h={"10vh"}
-      pos={"fixed"}
-      top={0}
-      left={0}
-      right={0}
-      zIndex={999}
-    >
+    <Box w={"full"} h={"10vh"}>
       <Container maxW={"container.lg"}>
         <Flex align={"center"} justify={"space-between"} height={"10vh"}>
           <Link href={"/"}>

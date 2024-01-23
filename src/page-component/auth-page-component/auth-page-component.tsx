@@ -22,10 +22,14 @@ const AuthPageComponent = () => {
   const [state, setState] = useState<"login" | "register" | "verify">("login");
   const breakpointValue = useBreakpointValue({ base: "md", md: "lg" });
 
+  const onNavigateStateComponent = (
+    component: "login" | "register" | "verify"
+  ) => setState(component);
+
   const renderSateComponent = () => {
     switch (state) {
       case "login":
-        return <Login />;
+        return <Login onNavigateStateComponent={onNavigateStateComponent} />;
       case "register":
         return <Register />;
       case "verify":
@@ -42,7 +46,7 @@ const AuthPageComponent = () => {
           maxW={"7xl"}
           columns={{ base: 1, md: 2 }}
           spacing={{ base: 10, lg: 32 }}
-          py={{ base: 10, sm: 20, lg: 32 }}
+          py={{ base: 10, sm: 20 }}
         >
           <Stack spacing={{ base: 10, md: 20 }}>
             <Heading
@@ -125,7 +129,7 @@ const AuthPageComponent = () => {
         </Container>
         <Blur
           position={"absolute"}
-          top={"11vh"}
+          top={"0"}
           left={-10}
           style={{ filter: "blur(70px)" }}
         />
