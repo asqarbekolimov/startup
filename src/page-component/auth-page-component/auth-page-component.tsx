@@ -19,7 +19,7 @@ import { avatars } from "@/config/constants";
 import { Login, Register, SocialMedia, Verify } from "@/components";
 
 const AuthPageComponent = () => {
-  const [state, setState] = useState<"login" | "register" | "verify">("login");
+  const [state, setState] = useState<"login" | "register" | "verify">("verify");
   const breakpointValue = useBreakpointValue({ base: "md", md: "lg" });
 
   const onNavigateStateComponent = (
