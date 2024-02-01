@@ -17,14 +17,16 @@ import {
 } from "@chakra-ui/react";
 import { avatars } from "@/config/constants";
 import { Login, Register, SocialMedia, Verify } from "@/components";
+import { useTranslation } from "react-i18next";
 
 const AuthPageComponent = () => {
-  const [state, setState] = useState<"login" | "register" | "verify">("verify");
+  const [state, setState] = useState<"login" | "register" | "verify">("login");
   const breakpointValue = useBreakpointValue({ base: "md", md: "lg" });
 
   const onNavigateStateComponent = (
     component: "login" | "register" | "verify"
   ) => setState(component);
+  const {t}=useTranslation()
 
   const renderSateComponent = () => {
     switch (state) {
@@ -53,7 +55,7 @@ const AuthPageComponent = () => {
               lineHeight={1.1}
               fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
             >
-              Senior web desingers {""}
+              {t('auth_page_title_1', {ns:'global'})} {""}
               <Text
                 as={"span"}
                 bgGradient={"linear(to-r, gray.400, facebook.400)"}
@@ -61,7 +63,7 @@ const AuthPageComponent = () => {
               >
                 & {""}
               </Text>
-              Full-Stack Developers
+              {t('auth_page_title_2', {ns:'global'})}
             </Heading>
             <Stack direction={"row"} spacing={4} align={"center"}>
               <AvatarGroup>
@@ -99,6 +101,7 @@ const AuthPageComponent = () => {
                 minWidth={useBreakpointValue({ base: "44px", md: "60px" })}
                 minHeight={useBreakpointValue({ base: "44px", md: "60px" })}
                 position={"relative"}
+                textTransform={'uppercase'}
                 _before={{
                   content: '""',
                   width: "full",
@@ -112,7 +115,7 @@ const AuthPageComponent = () => {
                   left: 0,
                 }}
               >
-                YOU
+                {t('auth_page_you', { ns: 'global' })}
               </Flex>
             </Stack>
           </Stack>

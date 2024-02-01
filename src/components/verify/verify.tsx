@@ -9,8 +9,11 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Verify = () => {
+  const { t } = useTranslation();
+
   return (
     <Stack spacing={4}>
       <Heading
@@ -18,7 +21,7 @@ const Verify = () => {
         lineHeight={1.1}
         fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
       >
-        Verification
+        {t('verification_title', { ns: 'global' })}
         <Text
           as={"span"}
           bgGradient="linear(to-r, gray.400,facebook.400)"
@@ -28,8 +31,7 @@ const Verify = () => {
         </Text>
       </Heading>
       <Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
-        The last step and it almost done, just check your email we sent to your
-        email otp verification code with 6 digits number.
+      {t('verification_description', { ns: 'global' })}
       </Text>
       <HStack justify={"center"}>
         <PinInput
@@ -53,7 +55,7 @@ const Verify = () => {
         }}
         h={14}
       >
-        Confirm
+        {t('verification_btn', { ns: 'global' })}
       </Button>
     </Stack>
   );
