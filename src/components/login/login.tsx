@@ -14,7 +14,6 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { LoginProps } from "./login.props";
@@ -33,7 +32,7 @@ const Login = ({ onNavigateStateComponent }: LoginProps) => {
         lineHeight={1.1}
         fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
       >
-        {t('login_title', { ns: 'global' })}
+        {t("login_title", { ns: "global" })}
         <Text
           as={"span"}
           bgGradient="linear(to-r, gray.400,facebook.400)"
@@ -43,10 +42,10 @@ const Login = ({ onNavigateStateComponent }: LoginProps) => {
         </Text>
       </Heading>
       <Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
-      {t('login_description', { ns: 'global' })}
+        {t("login_description", { ns: "global" })}
       </Text>
       <FormControl isRequired>
-        <FormLabel>{t('login_input_email_label', { ns: 'global' })}</FormLabel>
+        <FormLabel>{t("login_input_email_label", { ns: "global" })}</FormLabel>
         <Input
           focusBorderColor="facebook.500"
           type="text"
@@ -55,7 +54,9 @@ const Login = ({ onNavigateStateComponent }: LoginProps) => {
         />
       </FormControl>
       <FormControl isRequired>
-        <FormLabel>{t('login_input_password_label', { ns: 'global' })}</FormLabel>
+        <FormLabel>
+          {t("login_input_password_label", { ns: "global" })}
+        </FormLabel>
         <InputGroup>
           <Input
             focusBorderColor="facebook.500"
@@ -73,16 +74,18 @@ const Login = ({ onNavigateStateComponent }: LoginProps) => {
         </InputGroup>
       </FormControl>
       <HStack justify={"space-between"}>
-        <Checkbox colorScheme="facebook">{t('auth_remember_me', { ns: 'global' })}</Checkbox>
-        <Link href={"/account-recovery"}>
-          <Box
-            as="a"
-            color={"teal.500"}
-            _hover={{ textDecoration: "underline" }}
-          >
-          {t('auth_forgot_password', { ns: 'global' })}
-          </Box>
-        </Link>
+        <Checkbox colorScheme="facebook">
+          {t("auth_remember_me", { ns: "global" })}
+        </Checkbox>
+        <Box
+          as="a"
+          onClick={() => onNavigateStateComponent("account-recovery")}
+          color={"teal.500"}
+          cursor={"pointer"}
+          _hover={{ textDecoration: "underline" }}
+        >
+          {t("auth_forgot_password", { ns: "global" })}
+        </Box>
       </HStack>
       <Button
         w={"full"}
@@ -94,10 +97,10 @@ const Login = ({ onNavigateStateComponent }: LoginProps) => {
         }}
         h={14}
       >
-        {t('login_btn', { ns: 'global' })}
+        {t("login_btn", { ns: "global" })}
       </Button>
       <Text>
-      {t('login_not_account_yet', { ns: 'global' })}{' '}
+        {t("login_not_account_yet", { ns: "global" })}{" "}
         <Box
           as="span"
           color={"teal.500"}
@@ -105,7 +108,7 @@ const Login = ({ onNavigateStateComponent }: LoginProps) => {
           _hover={{ textDecoration: "underline" }}
           onClick={() => onNavigateStateComponent("register")}
         >
-          {t('login_redirect_to_register', { ns: 'global' })}
+          {t("login_redirect_to_register", { ns: "global" })}
         </Box>
       </Text>
     </Stack>

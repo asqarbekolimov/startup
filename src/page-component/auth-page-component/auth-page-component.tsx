@@ -16,17 +16,25 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { avatars } from "@/config/constants";
-import { Login, Register, SocialMedia, Verify } from "@/components";
+import {
+  AccountRecovery,
+  Login,
+  Register,
+  SocialMedia,
+  Verify,
+} from "@/components";
 import { useTranslation } from "react-i18next";
 
 const AuthPageComponent = () => {
-  const [state, setState] = useState<"login" | "register" | "verify">("login");
+  const [state, setState] = useState<
+    "login" | "register" | "verify" | "account-recovery"
+  >("login");
   const breakpointValue = useBreakpointValue({ base: "md", md: "lg" });
 
   const onNavigateStateComponent = (
-    component: "login" | "register" | "verify"
+    component: "login" | "register" | "verify" | "account-recovery"
   ) => setState(component);
-  const {t}=useTranslation()
+  const { t } = useTranslation();
 
   const renderSateComponent = () => {
     switch (state) {
@@ -36,6 +44,12 @@ const AuthPageComponent = () => {
         return <Register onNavigateStateComponent={onNavigateStateComponent} />;
       case "verify":
         return <Verify />;
+      case "account-recovery":
+        return (
+          <AccountRecovery
+            onNavigateStateComponent={onNavigateStateComponent}
+          />
+        );
     }
   };
 
@@ -55,7 +69,7 @@ const AuthPageComponent = () => {
               lineHeight={1.1}
               fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
             >
-              {t('auth_page_title_1', {ns:'global'})} {""}
+              {t("auth_page_title_1", { ns: "global" })} {""}
               <Text
                 as={"span"}
                 bgGradient={"linear(to-r, gray.400, facebook.400)"}
@@ -63,7 +77,7 @@ const AuthPageComponent = () => {
               >
                 & {""}
               </Text>
-              {t('auth_page_title_2', {ns:'global'})}
+              {t("auth_page_title_2", { ns: "global" })}
             </Heading>
             <Stack direction={"row"} spacing={4} align={"center"}>
               <AvatarGroup>
@@ -101,7 +115,7 @@ const AuthPageComponent = () => {
                 minWidth={useBreakpointValue({ base: "44px", md: "60px" })}
                 minHeight={useBreakpointValue({ base: "44px", md: "60px" })}
                 position={"relative"}
-                textTransform={'uppercase'}
+                textTransform={"uppercase"}
                 _before={{
                   content: '""',
                   width: "full",
@@ -115,7 +129,7 @@ const AuthPageComponent = () => {
                   left: 0,
                 }}
               >
-                {t('auth_page_you', { ns: 'global' })}
+                {t("auth_page_you", { ns: "global" })}
               </Flex>
             </Stack>
           </Stack>

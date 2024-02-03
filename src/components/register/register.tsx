@@ -15,7 +15,6 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { RegisterProps } from "./register.props";
 import useShowPassword from "@/hooks/useShowPassword";
@@ -24,7 +23,7 @@ import { useTranslation } from "react-i18next";
 const Register = ({ onNavigateStateComponent }: RegisterProps) => {
   const { show, toggleShow, showConfirm, toggleShowConfirm } =
     useShowPassword();
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <Stack spacing={4}>
@@ -33,7 +32,7 @@ const Register = ({ onNavigateStateComponent }: RegisterProps) => {
         lineHeight={1.1}
         fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
       >
-        {t('register_title', { ns: 'global' })}
+        {t("register_title", { ns: "global" })}
         <Text
           as={"span"}
           bgGradient="linear(to-r, gray.400,facebook.400)"
@@ -43,10 +42,10 @@ const Register = ({ onNavigateStateComponent }: RegisterProps) => {
         </Text>
       </Heading>
       <Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
-      {t('register_description', { ns: 'global' })}
+        {t("register_description", { ns: "global" })}
       </Text>
       <FormControl isRequired>
-        <FormLabel>{t('login_input_email_label', { ns: 'global' })}</FormLabel>
+        <FormLabel>{t("login_input_email_label", { ns: "global" })}</FormLabel>
         <Input
           focusBorderColor="facebook.500"
           type="text"
@@ -56,7 +55,9 @@ const Register = ({ onNavigateStateComponent }: RegisterProps) => {
       </FormControl>
       <Flex gap={4}>
         <FormControl isRequired>
-          <FormLabel>{t('login_input_password_label', { ns: 'global' })}</FormLabel>
+          <FormLabel>
+            {t("login_input_password_label", { ns: "global" })}
+          </FormLabel>
           <InputGroup>
             <Input
               focusBorderColor="facebook.500"
@@ -74,7 +75,9 @@ const Register = ({ onNavigateStateComponent }: RegisterProps) => {
           </InputGroup>
         </FormControl>
         <FormControl isRequired>
-          <FormLabel>{t('register_input_confirm_password_label', { ns: 'global' })}</FormLabel>
+          <FormLabel>
+            {t("register_input_confirm_password_label", { ns: "global" })}
+          </FormLabel>
           <InputGroup>
             <Input
               focusBorderColor="facebook.500"
@@ -93,16 +96,18 @@ const Register = ({ onNavigateStateComponent }: RegisterProps) => {
         </FormControl>
       </Flex>
       <HStack justify={"space-between"}>
-        <Checkbox colorScheme="facebook">{t('auth_remember_me', { ns: 'global' })}</Checkbox>
-        <Link href={"/account-recovery"}>
-          <Box
-            as="a"
-            color={"teal.500"}
-            _hover={{ textDecoration: "underline" }}
-          >
-            {t('auth_forgot_password', { ns: 'global' })}
-          </Box>
-        </Link>
+        <Checkbox colorScheme="facebook">
+          {t("auth_remember_me", { ns: "global" })}
+        </Checkbox>
+        <Box
+          as="a"
+          onClick={() => onNavigateStateComponent("account-recovery")}
+          cursor={"pointer"}
+          color={"teal.500"}
+          _hover={{ textDecoration: "underline" }}
+        >
+          {t("auth_forgot_password", { ns: "global" })}
+        </Box>
       </HStack>
       <Button
         w={"full"}
@@ -114,10 +119,10 @@ const Register = ({ onNavigateStateComponent }: RegisterProps) => {
         }}
         h={14}
       >
-        {t('register_btn', { ns: 'global' })}
+        {t("register_btn", { ns: "global" })}
       </Button>
       <Text>
-      {t('register_already_have_account', { ns: 'global' })}{' '}
+        {t("register_already_have_account", { ns: "global" })}{" "}
         <Box
           as="span"
           color={"teal.500"}
@@ -125,7 +130,7 @@ const Register = ({ onNavigateStateComponent }: RegisterProps) => {
           _hover={{ textDecoration: "underline" }}
           onClick={() => onNavigateStateComponent("login")}
         >
-          {t('register_redirect_to_login', { ns: 'global' })}
+          {t("register_redirect_to_login", { ns: "global" })}
         </Box>
       </Text>
     </Stack>
