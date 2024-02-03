@@ -10,7 +10,7 @@ const SocialMedia = () => {
         _before={{
           content: '""',
           position: "absolute",
-          w: "45%",
+          w: "40%",
           left: 0,
           top: "50%",
           transform: "translateY(-50%)",
@@ -20,7 +20,7 @@ const SocialMedia = () => {
         _after={{
           content: '""',
           position: "absolute",
-          w: "45%",
+          w: "40%",
           right: 0,
           top: "50%",
           transform: "translateY(-50%)",
@@ -33,10 +33,10 @@ const SocialMedia = () => {
       </Box>
       <HStack>
         <Button w={"full"} colorScheme="gray" leftIcon={<FaGithub />}>
-          <Center>Sign in with Github</Center>
+          <Center>Github</Center>
         </Button>
         <Button w={"full"} colorScheme="red" leftIcon={<FaGoogle />}>
-          <Center>Sign in with Google</Center>
+          <Center>Google</Center>
         </Button>
       </HStack>
     </>

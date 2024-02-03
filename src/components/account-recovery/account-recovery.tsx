@@ -20,6 +20,7 @@ import {
 } from "@chakra-ui/react";
 import useShowPassword from "@/hooks/useShowPassword";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
 
 const AccountRecovery = ({
   onNavigateStateComponent,
@@ -30,6 +31,7 @@ const AccountRecovery = ({
   const { show, toggleShow, showConfirm, toggleShowConfirm } =
     useShowPassword();
   const toast = useToast();
+  const { t } = useTranslation();
 
   const onForm1Submit = () => {
     setStep(2);
@@ -58,7 +60,7 @@ const AccountRecovery = ({
         fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
       >
         {" "}
-        Account Recovery
+        {t("account_recovery_title_form1", { ns: "global" })}
         <Text
           as={"span"}
           bgGradient={"linear(to-r, gray.400, facebook.400)"}
@@ -67,12 +69,9 @@ const AccountRecovery = ({
           !
         </Text>
       </Heading>
-      <Text>
-        Your forgot password from your account. Don't worry about it. Sammi team
-        can help you solve that problem. Just follow steps below.
-      </Text>
+      <Text>{t("account_recovery_description_form1", { ns: "global" })}</Text>
       <FormControl>
-        <FormLabel>Email address</FormLabel>
+        <FormLabel>{t("login_input_email_label", { ns: "global" })}</FormLabel>
         <Input
           focusBorderColor="facebook.500"
           type="text"
@@ -91,7 +90,7 @@ const AccountRecovery = ({
         h={14}
         onClick={onForm1Submit}
       >
-        Send OTP
+        {t("account_recovery_btn_form1", { ns: "global" })}
       </Button>
     </>
   );
@@ -103,7 +102,7 @@ const AccountRecovery = ({
         fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
       >
         {" "}
-        Verify Email
+        {t("account_recovery_title_form2", { ns: "global" })}
         <Text
           as={"span"}
           bgGradient={"linear(to-r, gray.400, facebook.400)"}
@@ -112,9 +111,7 @@ const AccountRecovery = ({
           !
         </Text>
       </Heading>
-      <Text>
-        We sent to your email otp verification code with 6 digits number.
-      </Text>
+      <Text>{t("account_recovery_description_form2", { ns: "global" })}</Text>
       <HStack justify={"center"}>
         <PinInput
           otp
@@ -138,7 +135,7 @@ const AccountRecovery = ({
         h={14}
         onClick={onForm2Submit}
       >
-        Verify
+        {t("account_recovery_btn_form2", { ns: "global" })}
       </Button>
     </>
   );
@@ -150,7 +147,7 @@ const AccountRecovery = ({
         fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
       >
         {" "}
-        New Password
+        {t("account_recovery_title_form3", { ns: "global" })}
         <Text
           as={"span"}
           bgGradient={"linear(to-r, gray.400, facebook.400)"}
@@ -159,9 +156,11 @@ const AccountRecovery = ({
           !
         </Text>
       </Heading>
-      <Text>Last step to return and anjoy our courses and services.</Text>
+      <Text>{t("account_recovery_description_form3", { ns: "global" })}</Text>
       <FormControl isRequired>
-        <FormLabel>Password</FormLabel>
+        <FormLabel>
+          {t("register_input_confirm_password_label", { ns: "global" })}
+        </FormLabel>
         <InputGroup>
           <Input
             focusBorderColor="facebook.500"
@@ -179,7 +178,9 @@ const AccountRecovery = ({
         </InputGroup>
       </FormControl>
       <FormControl isRequired>
-        <FormLabel>Confirm Password</FormLabel>
+        <FormLabel>
+          {t("register_input_confirm_password_label", { ns: "global" })}
+        </FormLabel>
         <InputGroup>
           <Input
             focusBorderColor="facebook.500"
@@ -207,7 +208,7 @@ const AccountRecovery = ({
         h={14}
         onClick={onForm3Submit}
       >
-        Submit
+        {t("account_recovery_btn_form3", { ns: "global" })}
       </Button>
     </>
   );
